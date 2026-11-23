@@ -6,10 +6,40 @@
 
 ## 安装
 
-1. 下载或打开仓库根目录的 `gemini-memory-box.user.js`，导入脚本猫或 Tampermonkey。
-2. 如果装过旧版回忆匣，请先停用旧脚本。1.0.4 使用新的脚本标识，偏好需要重新设置。
-3. 打开 [Gemini 网页](https://gemini.google.com/)，进入已保存的聊天，等回复结束后点击右下角的「回忆匣 · Gemini」，再选择「导出当前对话 · ZIP」。
-4. 完整解压导出的 ZIP，打开「打开我.html」。找不到入口时，可在脚本管理器菜单选择「显示回忆匣 · Gemini」。
+下面以电脑端 Chrome 和脚本猫（ScriptCat）为例。
+
+### 1. 在 Chrome 里安装脚本猫
+
+1. 打开扩展商店的脚本猫页面，点「添加至 Chrome」，再在弹窗里点「添加扩展程序」。[脚本猫（Chrome 应用商店）](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf?hl=zh-CN)
+2. 点击 Chrome 右上角的拼图图标「扩展程序」，找到「脚本猫」。可以点旁边的图钉，把它固定到工具栏。
+
+### 2. 允许脚本猫运行用户脚本
+
+1. 在 Chrome 地址栏输入 `chrome://extensions/` 并回车，找到脚本猫，确认扩展已启用。
+2. **Chrome 138 及以上**，在脚本猫卡片上点「详细信息」，打开「允许用户脚本」。**Chrome 120–137**，打开扩展管理页右上角的「开发者模式」。[Chrome 用户脚本权限说明](https://developer.chrome.com/docs/extensions/reference/api/userScripts#enable_usage_of_the_userscripts_api)
+
+### 3. 安装回忆匣脚本
+
+1. 如果装过旧版回忆匣，先到原来的脚本管理器里停用旧版。1.0.4 使用了新的脚本标识，安装后需要重新设置偏好。
+2. 用刚装好脚本猫的 Chrome 打开下面的安装链接。出现脚本猫的确认页后，核对名称是「回忆匣 · Gemini」、版本是 `1.0.4`，然后点「安装」。[安装回忆匣 · Gemini](https://raw.githubusercontent.com/yhyg2/gemini-memory-box/main/gemini-memory-box.user.js)
+3. 点击工具栏上的脚本猫，再点齿轮进入管理面板。找到「回忆匣 · Gemini」，确认这一项的开关已打开。
+
+如果安装链接只显示源码或下载了 `.user.js`，可以手动添加。复制网页上的完整源码，或用文本编辑器打开下载的文件并复制全部内容。打开脚本猫管理面板，点右上角的「新建脚本」，选择普通脚本，用复制的源码替换编辑器里的模板，再按 `Ctrl+S` 保存。回到管理面板确认脚本已启用。[脚本猫的手动安装说明](https://docs.scriptcat.org/docs/use/script_installation/#手动安装脚本)
+
+已经在用 Tampermonkey（油猴）的读者也可以用同一个安装链接。回忆匣在一个脚本管理器里启用即可。
+
+### 4. 打开 Gemini，刷新后确认按钮出现
+
+1. 用安装了脚本猫的同一个 Chrome 用户资料打开 Gemini，登录后从左侧历史列表进入要导出的对话。[打开 Gemini 网页](https://gemini.google.com/)
+2. **如果安装脚本前就已经打开了 Gemini，回到这个标签页，按 `F5` 或 `Ctrl+R` 刷新**，也可以点地址栏左侧的刷新按钮。如果 Gemini 正在回复，等回复完成再刷新。修改脚本权限或重新启用脚本后，也在 Gemini 标签页刷新一次。
+3. 页面加载后，右下角出现「回忆匣 · Gemini」按钮，就可以点开导出面板。
+
+如果右下角没看到按钮，留在 Gemini 标签页，点击工具栏的脚本猫图标，找「显示回忆匣 · Gemini」菜单项。如果菜单里也没有，检查脚本是否启用、Chrome 是否已允许脚本猫运行用户脚本，以及脚本猫是否有权访问 `gemini.google.com`。设置好后回到 Gemini 再刷新。
+
+### 5. 导出 ZIP 并离线打开
+
+1. 等当前回复结束，点击「回忆匣 · Gemini」→「导出当前对话 · ZIP」。弹出保存窗口时，选好文件夹并点「保存」。使用浏览器默认下载方式时，可以按 `Ctrl+J` 查找 ZIP。
+2. 等回忆匣提示导出完成或 ZIP 已保存。找到 ZIP 后，右键选择「全部解压缩」，打开解压后目录里的 `打开我.html`。如果提示有待核对项，可以从这个页面查看导出报告和附件失败清单。
 
 ## 导出范围
 
