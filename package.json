@@ -1,0 +1,20 @@
+{
+  "name": "gemini-memory-box",
+  "version": "1.0.4",
+  "private": true,
+  "description": "Local-only Gemini conversation ZIP exporter",
+  "scripts": {
+    "build": "python3 build.py",
+    "test": "python3 build.py && node --test --test-reporter=tap tests/*.test.cjs",
+    "test:browser": "npm run build && node tests/browser.cjs",
+    "preview": "npm run build && node tests/make-preview.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "jszip": "3.10.1",
+    "playwright": "1.62.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

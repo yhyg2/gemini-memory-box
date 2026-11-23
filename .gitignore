@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+*.py[cod]
+qa/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.zip
+*.log
+回忆匣_Gemini_*.json
